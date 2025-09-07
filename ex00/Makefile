@@ -1,32 +1,32 @@
-NAME		=	megaphone
+NAME		=		megaphone
 
-CC			=	g++
+CC			=		g++
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=		-Wall -Wextra -Werror -std=c++98
 
-SRCS			=	megaphone.cpp
+SRCS		=		megaphone.cpp
 
-OBJS_DIR	=	./objs
+OBJS_DIR	=		./objs
 
-OBJS		=	$(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
+OBJS		=		$(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
 
-RM			=	rm -rf
+RM			=		rm -rf
 
-all:			$(NAME)
+all:				$(NAME)
 
-$(NAME):		$(OBJS)
-				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME):			$(OBJS)
+					$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)/%.o:	%.cpp | $(OBJS_DIR)
 					$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJS_DIR):
-				mkdir -p $(OBJS_DIR)
+					mkdir -p $(OBJS_DIR)
 
 clean:			
-				$(RM) $(OBJS_DIR)
+					$(RM) $(OBJS_DIR)
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean:				clean
+					$(RM) $(NAME)
 
-re:				fclean all
+re:					fclean all
