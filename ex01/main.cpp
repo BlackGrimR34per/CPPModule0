@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/07 16:21:55 by yosherau          #+#    #+#             */
+/*   Updated: 2025/09/07 17:19:07 by yosherau         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include <iostream>
+# include "PhoneBook.class.hpp"
+
+# define EXIT_SUCCESS 0
+
+int	main()
+{
+	std::string	input;
+	PhoneBook	phoneBook;
+
+	input = "";
+	while (input != "EXIT")
+	{
+		std::cout << "Please input operation to perform: ";
+		std::cin >> input;
+		if (input == "ADD")
+			// phoneBook
+		else if (input == "SEARCH")
+			;
+		else
+			continue;
+	}
+	return (EXIT_SUCCESS);
+}
