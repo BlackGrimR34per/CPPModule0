@@ -4,7 +4,9 @@ FLAGS		=		-Wall -Wextra -Werror -std=c++98
 
 NAME		=		my_awesome_phonebook
 
-SRCS		=		main.cpp
+SRCS_DIR	=		./srcs
+
+SRCS		=		main.cpp PhoneBook.class.cpp Contact.class.cpp
 
 OBJS_DIR	=		./objs
 
