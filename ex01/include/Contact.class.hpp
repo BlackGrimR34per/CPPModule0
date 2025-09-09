@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 14:21:36 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/08 16:52:47 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:27:56 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Contact
 	public:
 		Contact(){}
 		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
+		std::string	get_first_name(void);
+		std::string	get_last_name(void);
+		std::string get_nickname(void);
 };
 
 #endif

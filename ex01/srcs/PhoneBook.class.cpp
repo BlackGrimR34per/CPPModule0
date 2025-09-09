@@ -3,19 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 17:17:44 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/08 17:00:35 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:34:04 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PhoneBook.class.hpp"
+# include "../include/PhoneBook.class.hpp"
+# include <iomanip>
 
 PhoneBook::PhoneBook(void)
 {
 	this->current_index = 0;
 	std::cout << "PhoneBook has been created" << std::endl;
+}
+
+void	PhoneBook::print_cell(const std::string &text, int width) const
+{
+	int padding_left = (width - (int)text.length()) / 2;
+		int padding_right = width - (int)text.length() - padding_left;
+
+		std::cout << "|"
+				<< std::setw(padding_left) << ""
+				<< std::left << text
+				<< std::setw(padding_right) << "";
 }
 
 void	PhoneBook::add_contact(void)
@@ -41,7 +53,27 @@ void	PhoneBook::add_contact(void)
 	current_index = current_index % 8;
 }
 
-// void	PhoneBook::search_contact(void)
-// {
-	
-// }
+void	PhoneBook::search_contact(void)
+{
+	int			column_width = 10;
+	std::string	header_separator = "+----------+----------+----------+----------+\n";
+	std::string	h1 = "index", h2 = "first name", h3 = "lastname", h4 = "nickname";
+	std::string	seperator = "|";
+
+	std::cout << header_separator;
+	print_cell(h1, column_width);
+	print_cell(h2, column_width);
+	print_cell(h3, column_width);
+	print_cell(h4, column_width);
+	std::cout << "|" << std::endl;
+	std::cout << header_separator;
+	for (int index = 0; index < this->current_index; index++)
+	{
+		print_cell(std::to_string(this->current_index), column_width);
+		print_cell(this->contacts[index].get_first_name(), column_width);
+		print_cell(this->contacts[index].get_last_name(), column_width);
+		print_cell(this->contacts[index].get_nickname(), column_width);
+		std::cout << "|" << std::endl;
+		std::cout << header_separator;
+	}
+}

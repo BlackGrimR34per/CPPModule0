@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 16:21:55 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/08 16:46:24 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/09 14:35:16 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
-# include "PhoneBook.class.hpp"
+# include "../include/PhoneBook.class.hpp"
 
 # define EXIT_SUCCESS 0
 
@@ -27,8 +27,8 @@ int	main()
 		std::cin >> input;
 		if (input == "ADD")
 			phoneBook.add_contact();
-		// else if (input == "SEARCH")
-			// phoneBook.search_contact();
+		else if (input == "SEARCH")
+			phoneBook.search_contact();
 		else
 			continue;
 	}
