@@ -6,12 +6,14 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 17:17:44 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/09 15:34:04 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/11 00:21:46 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../include/PhoneBook.class.hpp"
 # include <iomanip>
+# include <sstream>
+# include <string>
 
 PhoneBook::PhoneBook(void)
 {
@@ -55,10 +57,12 @@ void	PhoneBook::add_contact(void)
 
 void	PhoneBook::search_contact(void)
 {
-	int			column_width = 10;
-	std::string	header_separator = "+----------+----------+----------+----------+\n";
-	std::string	h1 = "index", h2 = "first name", h3 = "lastname", h4 = "nickname";
-	std::string	seperator = "|";
+	int					column_width = 10;
+	std::string			header_separator = "+----------+----------+----------+----------+\n";
+	std::string			h1 = "index", h2 = "first name", h3 = "lastname", h4 = "nickname";
+	std::string			seperator = "|";
+	std::stringstream	ss;
+	int					input;
 
 	std::cout << header_separator;
 	print_cell(h1, column_width);
@@ -67,13 +71,31 @@ void	PhoneBook::search_contact(void)
 	print_cell(h4, column_width);
 	std::cout << "|" << std::endl;
 	std::cout << header_separator;
-	for (int index = 0; index < this->current_index; index++)
+	for (int index = 0; index < 8; index++)
 	{
-		print_cell(std::to_string(this->current_index), column_width);
+		ss.str("");
+		ss << index + 1;
+		if (this->contacts->is_empty() == true)
+			continue;
+		print_cell(ss.str(), column_width);
 		print_cell(this->contacts[index].get_first_name(), column_width);
 		print_cell(this->contacts[index].get_last_name(), column_width);
 		print_cell(this->contacts[index].get_nickname(), column_width);
 		std::cout << "|" << std::endl;
 		std::cout << header_separator;
+	}
+
+	std::cout << "Please enter the index of individual to display: ";
+	std::cin >> input;
+	if (input < 0 || input > 8)
+		std::cout << "Error" << std::endl;
+	else
+	{
+		input = input - 1;
+		std::cout << this->contacts[input].get_first_name() << std::endl;
+		std::cout << this->contacts[input].get_last_name() << std::endl;
+		std::cout << this->contacts[input].get_nickname() << std::endl;
+		std::cout << this->contacts[input].get_phone_number() << std::endl;
+		std::cout << this->contacts[input].get_darkest_secret() << std::endl;
 	}
 }

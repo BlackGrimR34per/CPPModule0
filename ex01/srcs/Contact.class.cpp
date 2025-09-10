@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:03:12 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/09 15:27:51 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/11 00:20:26 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ std::string	Contact::get_last_name(void)
 std::string Contact::get_nickname(void)
 {
 	return this->nickname;
+}
+
+std::string Contact::get_phone_number(void)
+{
+	return this->phone_number;
+}
+
+std::string Contact::get_darkest_secret(void)
+{
+	return this->darkest_secret;
+}
+
+bool	Contact::is_empty(void) const
+{
+	return (this->first_name.empty());
 }

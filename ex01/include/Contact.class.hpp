@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 14:21:36 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/09 15:27:56 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/11 00:19:52 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class Contact
 		std::string	get_first_name(void);
 		std::string	get_last_name(void);
 		std::string get_nickname(void);
+		std::string get_phone_number(void);
+		std::string get_darkest_secret(void);
+		bool		is_empty(void) const;
 };
 
 #endif
