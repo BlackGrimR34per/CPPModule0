@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:03:12 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/11 00:20:26 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/11 15:08:54 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ Contact::Contact(std::string first_name, std::string last_name, std::string nick
 	std::cout << "Contact has been created" << std::endl;
 };
 
+Contact::~Contact()
+{
+	std::cout << "Deconstructing Contact" << std::endl;
+}
+
 std::string	Contact::get_first_name(void)
 {
 	return this->first_name;
@@ -28,17 +33,17 @@ std::string	Contact::get_last_name(void)
 	return this->last_name;
 }
 
-std::string Contact::get_nickname(void)
+std::string	Contact::get_nickname(void)
 {
 	return this->nickname;
 }
 
-std::string Contact::get_phone_number(void)
+std::string	Contact::get_phone_number(void)
 {
 	return this->phone_number;
 }
 
-std::string Contact::get_darkest_secret(void)
+std::string	Contact::get_darkest_secret(void)
 {
 	return this->darkest_secret;
 }
@@ -46,4 +51,11 @@ std::string Contact::get_darkest_secret(void)
 bool	Contact::is_empty(void) const
 {
 	return (this->first_name.empty());
+}
+
+std::string	Contact::format_string(const std::string &field)
+{
+	if ((int)field.length() >= 10)
+		return (field.substr(0, 9) + ".");
+	return (field);
 }

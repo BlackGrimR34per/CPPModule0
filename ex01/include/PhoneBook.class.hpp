@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 14:07:08 by yosherau          #+#    #+#             */
-/*   Updated: 2025/09/09 15:15:19 by yosherau         ###   ########.fr       */
+/*   Updated: 2025/09/11 15:08:46 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_CLASS_H
 
 # include "Contact.class.hpp"
+# include "../include/header_files.hpp"
 
 class PhoneBook
 {
@@ -23,8 +24,10 @@ class PhoneBook
 
 	public:
 		PhoneBook(void);
-		void	add_contact();
-		void	search_contact();
+		~PhoneBook(void);
+		void	add_contact(void);
+		void	search_contact(void);
+		int		get_number_of_contacts(void);
 };
 
 #endif
